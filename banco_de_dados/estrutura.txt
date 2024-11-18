@@ -1,0 +1,18 @@
+create database pratica1_reinaldocamilo;
+use pratica1_reinaldocamilo;
+
+create table cliente(
+id_cliente INT PRIMARY KEY AUTO_INCREMENT,
+nome_cliente varchar(45) not null,
+email_cliente varchar(100) not null,
+telefone_cliente varchar(9) not null
+);
+
+create table chamado(
+id_chamado INT PRIMARY KEY AUTO_INCREMENT,
+descricao varchar(90) not null,
+criticidade varchar(5) not null,
+ver_status varchar(20) not null,
+data_abertura date not null,
+foreign key ( fk_cliente ) references cliente(id_cliente)
+);
